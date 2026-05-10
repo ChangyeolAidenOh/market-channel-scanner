@@ -1,0 +1,10 @@
+country_iso3,country_iso2,name,tier,regulation_inv,competition_inv,import_volume,import_growth,gdp_per_capita,internet_pct,search_interest,medicube_interest,signal_pattern
+USA,US,United States,core,90,25,1023143537,46.4,85809.9003846359,94.69380188,3.0,8.0,dual-signal
+DEU,DE,Germany,core,60,40,40342699,51.3,73551.9347696836,93.49999579,3.0,3.0,balanced
+GBR,GB,United Kingdom,core,60,30,90765074,59.1,62009.4907765366,95.4720993,4.0,10.0,dual-signal
+FRA,FR,France,core,60,55,66658765,23.3,62556.91810454,88.65381638,2.0,4.0,balanced
+POL,PL,Poland,core,60,70,44238585,45.9,51262.5105756884,88.58496367,1.0,6.0,brand-led
+ESP,ES,Spain,core,60,50,21935100,36.4,57965.2948138837,95.7574516,1.0,4.0,brand-led
+KAZ,KZ,Kazakhstan,watchlist,40,55,63025837,48.2,40890.9317694408,93.39167254,0.0,4.0,brand-led
+ARE,AE,United Arab Emirates,watchlist,60,70,84566640,56.4,79228.738801276,100.0,7.0,17.0,dual-signal
+BRA,BR,Brazil,watchlist,20,75,16616591,122.1,22338.4765640635,84.46347227,1.0,3.0,low-signal

@@ -3,7 +3,7 @@ __pycache__/
 .env
 .venv/
 data/raw/*.csv
-data/processed/*.csv
+#data/processed/*.csv
 outputs/*.pdf
 .DS_Store
 .idea/

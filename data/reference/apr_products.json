@@ -1,0 +1,122 @@
+{
+  "brands": {
+    "medicube": {
+      "full_name": "Medicube",
+      "positioning": "Derma-inspired skincare + beauty tech device",
+      "price_tier": "mid-premium",
+      "key_products": [
+        {
+          "name": "Zero Pore Pad 2.0",
+          "category": "toner_pad",
+          "price_usd": 18,
+          "hero_status": true,
+          "global_sales_note": "Global cumulative 20M+ units (toner pad line)"
+        },
+        {
+          "name": "PDRN Serum",
+          "category": "serum",
+          "price_usd": 28,
+          "hero_status": true,
+          "global_sales_note": "PDRN line 50M+ units cumulative (as of Feb 2026)"
+        },
+        {
+          "name": "PDRN Cream",
+          "category": "moisturizer",
+          "price_usd": 32,
+          "hero_status": false,
+          "global_sales_note": "Part of PDRN line"
+        },
+        {
+          "name": "Collagen Night Wrapping Mask",
+          "category": "mask",
+          "price_usd": 24,
+          "hero_status": false,
+          "global_sales_note": "Rising popularity"
+        },
+        {
+          "name": "Deep Vita C Pad",
+          "category": "toner_pad",
+          "price_usd": 20,
+          "hero_status": false,
+          "global_sales_note": "Vitamin C line"
+        }
+      ],
+      "device_products": [
+        {
+          "name": "AGE-R Booster Pro",
+          "category": "beauty_device",
+          "price_usd": 250,
+          "hero_status": true,
+          "global_sales_note": "6M+ cumulative units (AGE-R line)"
+        },
+        {
+          "name": "AGE-R Booster Pro Mini",
+          "category": "beauty_device",
+          "price_usd": 150,
+          "hero_status": false,
+          "global_sales_note": "Entry-level device"
+        },
+        {
+          "name": "AGE-R Booster Glow",
+          "category": "beauty_device",
+          "price_usd": 200,
+          "hero_status": false,
+          "global_sales_note": "New launch 2026"
+        }
+      ],
+      "b2b_pitch_angle": "Not just skincare — device-linked routine solution. Differentiates from all other K-beauty brands."
+    },
+    "aprilskin": {
+      "full_name": "Aprilskin",
+      "positioning": "Accessible K-beauty, viral products, carrot/calendula ingredients",
+      "price_tier": "mass-accessible",
+      "key_products": [
+        {
+          "name": "Carrot Blemish Serum",
+          "category": "serum",
+          "price_usd": 16,
+          "hero_status": true,
+          "global_sales_note": "Carrot line bestseller"
+        },
+        {
+          "name": "Calendula Peeling Pad",
+          "category": "toner_pad",
+          "price_usd": 14,
+          "hero_status": true,
+          "global_sales_note": "Entry-level K-beauty pad"
+        },
+        {
+          "name": "TXA Brightening Serum",
+          "category": "serum",
+          "price_usd": 18,
+          "hero_status": false,
+          "global_sales_note": "New TXA line 2026"
+        }
+      ],
+      "b2b_pitch_angle": "Accessible price point for mass/drugstore channels. Viral K-beauty appeal for younger demographic."
+    },
+    "forment": {
+      "full_name": "Forment",
+      "positioning": "Lifestyle fragrance brand",
+      "price_tier": "mid",
+      "key_products": [
+        {
+          "name": "Signature Perfume - Cotton Bath",
+          "category": "fragrance",
+          "price_usd": 35,
+          "hero_status": true,
+          "global_sales_note": "Signature scent"
+        }
+      ],
+      "b2b_pitch_angle": "Lifestyle/fragrance add-on to skincare portfolio. Cross-sell opportunity for distributors."
+    }
+  },
+  "apr_differentiators": [
+    "Only K-beauty company offering skincare + beauty device as integrated routine",
+    "AGE-R device drives recurring skincare purchases (razor-blade model)",
+    "6M+ devices sold globally — proven consumer demand for beauty tech",
+    "2025 annual revenue KRW 1.53T — financial stability for long-term B2B partnerships",
+    "Amazon US Beauty category #1 brand share (14.1%) in Q1 2026",
+    "TIME 100 Most Influential Companies 2026"
+  ]
+}

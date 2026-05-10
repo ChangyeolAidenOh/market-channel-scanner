@@ -1,0 +1,148 @@
+{
+  "countries": {
+    "US": {
+      "name": "United States",
+      "tier": "core",
+      "region": "North America",
+      "apr_status": "Primary market. D2C + Amazon + Ulta. Offline expansion in progress.",
+      "regulation_complexity": "low",
+      "distribution_structure": "Amazon dominant online. Ulta/Sephora specialty. Target/Walmart/Costco mass.",
+      "kbeauty_maturity": "high",
+      "strategic_note": "Not a new market entry. APR's task is sell-through growth, SKU diversification, and broader retail channel expansion.",
+      "currency": "USD",
+      "key_risk": "Tariff uncertainty under trade policy changes.",
+      "competition_inv": 25,
+      "competition_inv_note": "Amazon: Medicube 487 results (Zero Pore Pad 121K reviews), Aprilskin 374 results. Ulta: 1,338 K-beauty products, Medicube Featured Brand #1 with 'Only at Ulta' badges. Sokoglam: K-beauty specialist platform confirms mature consumer education. Costco: 86 Korean skincare results, no Medicube. Most competitive K-beauty market globally. Validated."
+    },
+    "DE": {
+      "name": "Germany",
+      "tier": "core",
+      "region": "Europe (EU)",
+      "apr_status": "Sephora EU entry (2025.3). No direct drugstore presence.",
+      "regulation_complexity": "medium",
+      "distribution_structure": "Douglas (premium), DM/Rossmann (drugstore). Both online+offline.",
+      "kbeauty_maturity": "medium",
+      "strategic_note": "Derma skincare culture aligns with Medicube positioning. EU regulatory approval is a gateway to broader Europe.",
+      "currency": "EUR",
+      "key_risk": "German consumers are quality-skeptical and need clinical evidence messaging.",
+      "competition_inv": 40,
+      "competition_inv_note": "Douglas: 19 brands, 715 products, Medicube 30 SKUs (highly saturated). DM: ~20 brands, 82 products, Medicube 4 SKUs online-only (moderate). Rossmann: 15+ brands, ~93 products, Medicube 8 SKUs, ISANA PB Korean Skincare line (moderate, PB validates demand). Combined 40 reflects premium + drugstore channels both confirmed competitive. All three channels have Medicube already listed."
+    },
+    "GB": {
+      "name": "United Kingdom",
+      "tier": "core",
+      "region": "Europe (non-EU)",
+      "apr_status": "Early B2B contracts with local distributors.",
+      "regulation_complexity": "medium",
+      "distribution_structure": "Boots dominates drugstore. Online beauty (Lookfantastic, Cult Beauty) strong.",
+      "kbeauty_maturity": "medium-high",
+      "strategic_note": "English-language market allows reuse of US marketing assets. Good initial test market for Europe.",
+      "currency": "GBP",
+      "key_risk": "Separate regulatory pathway from EU adds cost.",
+      "competition_inv": 30,
+      "competition_inv_note": "Boots: 486 products, 35+ brands, Medicube 13 SKUs. K-beauty operated as strategic trend category with editorial content, routine builder, curated bundles. Lookfantastic/Cult Beauty/Sephora UK not yet verified. Provisional."
+    },
+    "FR": {
+      "name": "France",
+      "tier": "core",
+      "region": "Europe (EU)",
+      "apr_status": "Sephora EU entry (2025.3).",
+      "regulation_complexity": "medium",
+      "distribution_structure": "Sephora (premium), pharmacy channel. Very brand-loyal consumers.",
+      "kbeauty_maturity": "medium",
+      "strategic_note": "Beauty powerhouse but brand trust barrier is high. Clinical/derma messaging must be polished for sophisticated consumers.",
+      "currency": "EUR",
+      "key_risk": "High brand loyalty to local brands. K-beauty seen as trend, not yet staple.",
+      "competition_inv": 55,
+      "competition_inv_note": "Sephora FR: 12 brands, 264 products, Medicube 19 SKUs. K-beauty structured as curated sub-category under Facial Treatment. Medicube present but absent from editorial brand guide. Push intensity lower than Boots/Douglas/Notino. Marionnaud/Nocibe not yet verified. Provisional."
+    },
+    "PL": {
+      "name": "Poland",
+      "tier": "core",
+      "region": "Europe (EU, Eastern)",
+      "apr_status": "Not entered or very early.",
+      "regulation_complexity": "medium",
+      "distribution_structure": "Rossmann PL, Hebe, online channels. Rapidly growing beauty market.",
+      "kbeauty_maturity": "medium",
+      "strategic_note": "K-beauty import growth accelerating. Lower competition and entry cost than Western EU. Potential test market for Eastern European expansion.",
+      "currency": "PLN",
+      "key_risk": "Smaller market size than Western EU. Price sensitivity.",
+      "competition_inv": 70,
+      "competition_inv_note": "Notino PL: ~1,700 K-beauty products (cross-border). Allegro: 543 Korean offers (marketplace). Hebe and Rossmann PL inaccessible from outside Poland - domestic channel competition unverified. Lowered from 80 to 70 to reflect confirmed cross-border presence. Domestic whitespace hypothesis remains partially unverified. Provisional."
+    },
+    "ES": {
+      "name": "Spain",
+      "tier": "core",
+      "region": "Europe (EU)",
+      "apr_status": "B2B contract with local distributor.",
+      "regulation_complexity": "medium",
+      "distribution_structure": "Sephora, Primor, online channels. Growing K-beauty awareness.",
+      "kbeauty_maturity": "medium-low",
+      "strategic_note": "K-beauty import growth moderate (36.4%). Channel-split market: Sephora ES remains small in K/J-beauty, while Primor shows a mature mass K-beauty routine category. Medicube has listing history but availability gap exists.",
+      "currency": "EUR",
+      "key_risk": "Price sensitivity higher than Northern Europe.",
+      "competition_inv": 50,
+      "competition_inv_note": "Primor: 1,031 products, 90+ brands, Medicube 13 SKUs (all Not Available). Druni: 485 products, ~38 brands, mask-heavy (supporting evidence). Sephora ES: ~46 products (K+J mixed, small). Mass channel K-beauty is mature. Medicube has listing history but no active availability. Provisional."
+    },
+    "KZ": {
+      "name": "Kazakhstan",
+      "tier": "watchlist",
+      "region": "CIS",
+      "apr_status": "Not entered.",
+      "regulation_complexity": "medium-high",
+      "distribution_structure": "Kaspi.kz (dominant marketplace), local distributors.",
+      "kbeauty_maturity": "low-medium",
+      "strategic_note": "CIS gateway with less sanctions risk than Russia. Growing middle class and K-culture popularity. Long-term strategic bet.",
+      "currency": "KZT",
+      "key_risk": "Small market. Logistics infrastructure limited. EAC certification required.",
+      "competition_inv": 55,
+      "competition_inv_note": "Kaspi.kz: 28,213 Korean cosmetics listings (marketplace, estimated ~3,500-4,000 unique products after ~7x seller duplication adjustment). Medicube 407 listings with 5-star reviews. K-beauty supply exists through marketplace channels but official retail/drugstore channels not verified. Not a whitespace market. Score reflects marketplace-led competition with channel control uncertainty. Provisional."
+    },
+    "AE": {
+      "name": "United Arab Emirates",
+      "tier": "watchlist",
+      "region": "Middle East",
+      "apr_status": "APR Dubai popup held. B2B exploration stage.",
+      "regulation_complexity": "medium",
+      "distribution_structure": "Sephora ME, Faces, online channels. Premium positioning important.",
+      "kbeauty_maturity": "medium",
+      "strategic_note": "High purchasing power. K-beauty/K-culture popular. Gateway to broader GCC market.",
+      "currency": "AED",
+      "key_risk": "Halal certification may be needed. Premium-only positioning required.",
+      "competition_inv": 70,
+      "competition_inv_note": "Some K-beauty in Sephora ME. Not saturated like US/Germany but presence exists. Stage 2 provisional."
+    },
+    "BR": {
+      "name": "Brazil",
+      "tier": "watchlist",
+      "region": "Latin America",
+      "apr_status": "Not entered. Planned.",
+      "regulation_complexity": "high",
+      "distribution_structure": "Mercado Livre, physical retail. Beauty market is large but complex.",
+      "kbeauty_maturity": "low",
+      "strategic_note": "5th largest beauty market globally. Massive long-term potential but high regulatory and operational barriers.",
+      "currency": "BRL",
+      "key_risk": "ANVISA approval 6-12 months. Complex tax structure. Currency volatility.",
+      "competition_inv": 75,
+      "competition_inv_note": "Very few K-beauty brands due to ANVISA regulatory barrier. Low competition reflects entry difficulty, not necessarily clear whitespace. Stage 2 provisional."
+    }
+  },
+  "qualitative_appendix": {
+    "RUS": {
+        "name": "Russia",
+        "appendix_reason": "Sanctions, payment, logistics, and partner due-diligence risks exceed current scoring model's risk framework. Requires separate risk axes: sanctions_risk, payment_risk, logistics_risk, currency_settlement_risk, partner_due_diligence_risk.",
+        "kbeauty_signal": "Strong. Gold Apple: 1,741 K-beauty products, 200+ brands, Medicube 16 SKUs with reviews. K-beauty category is highly structured in Russian premium beauty retail.",
+        "medicube_status": "Visible. 16 SKUs including PDRN pink line, Zero Pore, Exosome products. Reviews present (4.0-5.0 stars).",
+        "scoring_exclusion_note": "Russia is excluded from the comparable opportunity score not because of weak demand, but because entry feasibility risks are outside the model's current feature structure. EU sanctions packages continue to expand (latest: April 2026). Including Russia in the same scoring table would overstate opportunity by underweighting execution risk.",
+        "recommendation": "Treat as a separate strategic assessment requiring sanctions compliance review, authorized distributor due diligence, and payment infrastructure validation before any B2B prioritization."
+    },
+    "UKR": {
+        "name": "Ukraine",
+        "appendix_reason": "War-related infrastructure, logistics, and recovery conditions dominate market feasibility. Standard market attractiveness metrics do not capture conflict-driven volatility.",
+        "kbeauty_signal": "Strong. EVA.UA: 10,009 Korean cosmetics products. Large K-beauty infrastructure exists despite conflict conditions.",
+        "medicube_status": "Aprilskin visible in EVA.UA brand filter. Medicube presence not confirmed but likely given broad K-beauty catalog.",
+        "scoring_exclusion_note": "Ukraine is excluded from the comparable opportunity score because war and recovery conditions (World Bank RDNA5: estimated $587.7B recovery needs) create market feasibility variables that cannot be captured by trade, GDP, or search-interest features alone.",
+        "recommendation": "Treat as long-term conditional market. Monitor post-conflict recovery trajectory and logistics stability before including in comparable scoring."
+    }
+  }
+}

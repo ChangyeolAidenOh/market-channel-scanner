@@ -94,7 +94,7 @@ def render():
         return colors.get(val, '')
 
     st.dataframe(
-        display.style.applymap(color_stability, subset=['Stability']),
+        display.style.map(color_stability, subset=['Stability']),
         use_container_width=True,
         hide_index=True,
     )

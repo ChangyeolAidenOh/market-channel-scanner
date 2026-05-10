@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+data/raw/*.csv
+data/processed/*.csv
+outputs/*.pdf
+.DS_Store
+.idea/
+notebooks/.ipynb_checkpoints/

@@ -163,6 +163,9 @@ def generate_brief(buyer_id, market_score=None, output_path=None):
     pdf = Brief()
     pdf.add_page()
 
+    is_us = buyer['country'] == 'US'
+    brief_label = 'U.S. Account Brief' if is_us else 'Benchmark Account Brief'
+
     # Title
     pdf.set_font('Helvetica', 'B', 14)
     pdf.set_text_color(30, 30, 30)
@@ -172,6 +175,9 @@ def generate_brief(buyer_id, market_score=None, output_path=None):
     pdf.cell(0, 5, s(f'{country_name}  |  {channel}'),
              new_x='LMARGIN', new_y='NEXT')
     pdf.ln(4)
+    pdf.set_font('Helvetica', '', 7)
+    pdf.set_text_color(130, 130, 130)
+    pdf.cell(0, 4, s(brief_label), new_x='LMARGIN', new_y='NEXT')
 
     # Evidence status badge
     ev_status = buyer.get('evidence_status', 'Not specified')
@@ -299,6 +305,13 @@ def generate_brief(buyer_id, market_score=None, output_path=None):
             pdf.multi_cell(w=0, h=4.5, text=s(response),
                           new_x='LMARGIN', new_y='NEXT')
             pdf.ln(2)
+            pdf.set_font('Helvetica', '', 6)
+            pdf.set_text_color(170, 170, 170)
+            pdf.multi_cell(w=0, h=3.5, text=s(
+                'This is a candidate portfolio simulation using public retailer pages, '
+                'public market data, and manually collected screenshots. '
+                'It does not use internal APR sales, margin, inventory, or buyer data.'
+            ), new_x='LMARGIN', new_y='NEXT')
 
     # Sign-off
     if pdf.page_no() == pdf.pages_count:

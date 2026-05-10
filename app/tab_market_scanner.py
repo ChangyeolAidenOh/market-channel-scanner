@@ -23,6 +23,15 @@ def load_data():
 def render():
     scores, features, qual = load_data()
 
+    st.markdown(
+        "> **Opportunity score is not the same as commercial priority.** "
+        "UAE ranks highest in entry-opportunity signals, but this project "
+        "targets the U.S. applicant region and prioritizes existing APR "
+        "account-growth tasks. The U.S. combines the largest import volume "
+        "($1.02B), high purchasing power, and visible public Medicube/Aprilskin "
+        "retail presence across Amazon, Ulta, and TikTok Shop."
+    )
+
     # Provisional notice
     st.info(
         "Competition whitespace scores are provisional. "

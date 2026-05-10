@@ -25,11 +25,19 @@ def render():
     # Executive Summary
     st.markdown(
         "This project began with a 9-market global scan and narrowed to the U.S. "
-        "as APR's core commercial market. The U.S. is not a new-entry market; "
-        "APR already has visible Medicube/APRILSKIN presence across Amazon, Ulta, "
-        "and TikTok Shop. Therefore, the project focuses on sell-through growth, "
+        "as the core commercial priority in this portfolio, because it combines "
+        "the largest import volume, high purchasing power, and visible public "
+        "Medicube/Aprilskin retail presence across Amazon, Ulta, and TikTok Shop. "
+        "Therefore, the project focuses on sell-through growth, "
         "SKU productivity, channel expansion, and cross-channel pricing governance."
     )
+
+    st.caption(
+        "Evidence levels: Observed = directly seen from public retailer pages. "
+        "Inferred = interpretation based on observed public signals. "
+        "Proposed = sales hypothesis for buyer conversation."
+    )
+
 
     # Channel overview metrics (2-line format to avoid truncation)
     st.subheader("U.S. Channel Overview")
@@ -118,6 +126,9 @@ def render():
     # Cross-channel pricing risk
     st.subheader("Cross-Channel Pricing Risk")
     st.warning(
+        "Cross-channel pricing governance is a key U.S. execution risk "
+        "because Amazon, Ulta, Target, and TikTok Shop operate with different "
+        "promotion mechanics and consumer expectations. "
         "Several observed TikTok Shop listings used aggressive discounting, "
         "often materially below traditional retail price points. "
         "Zero Pore Pad sells at approximately $15 on Amazon, $21 at Ulta, "
@@ -142,7 +153,7 @@ def render():
     st.subheader("APR Portfolio Gap: Aprilskin on TikTok Shop")
     gap_cols = st.columns(2)
     with gap_cols[0]:
-        st.metric("Medicube TikTok Shop", "5.7M+ sold")
+        st.metric("Medicube TikTok Shop", "5.7M+ shop-level public sold count")
         st.metric("Followers", "479.8K")
         st.metric("Videos", "962")
     with gap_cols[1]:

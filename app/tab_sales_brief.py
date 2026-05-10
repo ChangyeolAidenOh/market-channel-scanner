@@ -43,7 +43,12 @@ def render():
     )
 
     # Buyer selector
-    buyer_options = {b['id']: f"{b['buyer']} ({b['country']})" for b in buyers}
+    us_ids = ['amazon_us', 'tiktokshop_us', 'ulta_us', 'target_us']
+    us_buyers_list = [b for b in buyers if b['id'] in us_ids]
+    other_buyers = [b for b in buyers if b['id'] not in us_ids]
+    sorted_buyers = us_buyers_list + other_buyers
+    buyer_options = {b['id']: f"{'[US] ' if b['id'] in us_ids else '[Benchmark] '}{b['buyer']} ({b['country']})" for b
+                     in sorted_buyers}
     selected_id = st.selectbox(
         "Select buyer",
         list(buyer_options.keys()),

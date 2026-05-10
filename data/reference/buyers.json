@@ -11,7 +11,7 @@
       "buyer_ask": "Add adjacent PDRN/TXA SKUs around proven hero products and test bundle conversion.",
       "go_nogo": "Go: new SKU achieves measurable search visibility improvement and cross-sell conversion from hero SKU pages within 8 weeks. No-Go: cannibalization of hero SKU sales or weak review velocity on new listings.",
       "kbeauty_presence": ["COSRX", "Anua", "Beauty of Joseon", "Tirtir", "Medicube", "Laneige", "SKIN1004", "Dr.Jart+"],
-      "why_now": "APR has strong Amazon presence with both Medicube (487 results) and Aprilskin (374 results) actively listed. Medicube Zero Pore Pad showed 121K+ public ratings/reviews at the time of observation. Amazon K-Beauty section shows major competitor brands alongside Medicube. Opportunity is SKU depth expansion and search-driven cross-sell.",
+      "why_now": "Public signals suggest strong Amazon presence for Medicube and Aprilskin with both Medicube (487 results) and Aprilskin (374 results) actively listed. Medicube Zero Pore Pad showed 121K+ public ratings/reviews at the time of observation, providing a strong consumer-engagement proxy. Amazon K-Beauty section shows major competitor brands alongside Medicube. Opportunity is SKU depth expansion and search-driven cross-sell.",
       "apr_entry_angle": "Expand beyond hero SKUs. Add PDRN full line, Aprilskin TXA line, and device accessories. Protect hero SKU search rank while building adjacent product discovery.",
       "first_pitch_products": ["PDRN Cream", "Aprilskin TXA Serum", "AGE-R Booster Pro"],
       "test_structure": "New SKU launch alongside existing bestsellers. 8-12 week demand signal check via search rank, review velocity, and cross-sell conversion.",
@@ -19,7 +19,7 @@
       "risk": "Cannibalization of existing hero SKUs. Price competition from other K-beauty brands on Amazon. (Tariff/trade-policy uncertainty is a macro-level U.S. risk, not Amazon-specific.)",
       "objection_response": {},
       "commercial_hypothesis": "If APR expands adjacent Medicube and Aprilskin SKUs around proven hero products on Amazon, incremental revenue can come from search-driven cross-sell and bundle conversion, because Amazon shoppers already encounter APR through active listings and K-beauty category traffic.",
-      "apr_current_status": "Active. Strong Amazon presence observed through Medicube and Aprilskin listings. Zero Pore Pad showed 121K+ public ratings/reviews at the time of observation."
+      "apr_current_status": "Active listings observed. Official distribution status was not independently validated. Zero Pore Pad showed 121K+ public ratings/reviews at the time of observation."
     },
     {
       "id": "ulta_us",
@@ -53,7 +53,7 @@
       "channel_type": "Mass Retail",
       "online_offline": "both",
       "scale": "massive",
-      "evidence_status": "Partially validated",
+      "evidence_status": "Category presence observed",
       "buyer_ask": "Test Aprilskin and selected Medicube hero SKUs in accessible price tiers within Target's Korean Beauty category.",
       "go_nogo": "Go: Medicube/Aprilskin SKU sell-through meets the pilot benchmark agreed with the buyer within 8-12 weeks. No-Go: mass retail price sensitivity leads to weak conversion or Target deprioritizes K-beauty in post-Ulta beauty strategy.",
       "kbeauty_presence": ["COSRX", "Banila Co", "SKIN1004", "Laneige", "MEDIHEAL", "MISSHA", "Peach & Lily", "Round Lab", "TONYMOLY", "Avatara", "SUNGBOON EDITOR", "Abib", "AXIS-Y", "Dr. Althea", "Etude", "ISNtree", "Mixsoon", "VT Cosmetics", "d'Alba Piedmont", "haruharu wonder", "ma:nyo", "medicube", "numbuzin", "approximately 47 brands observed in Korean Beauty filter"],
@@ -64,7 +64,7 @@
       "success_kpi": ["SKU listing approval and early conversion signal", "Aprilskin price-tier acceptance at mass retail", "Target beauty team engagement and listing progression"],
       "risk": "Target Korean Beauty is price-sensitive (bestsellers observed at $3-$5). Medicube at $15-$25 sits above core Target K-beauty price range. Post-Ulta beauty strategy direction is uncertain. Sephora at Kohl's is a competitive benchmark that Target must consider. Note: the post-Ulta transition is a timing signal worth monitoring, not a confirmed opening for K-beauty partnerships.",
       "objection_response": {
-        "We are focused on our beauty transition right now": "APR is not asking for immediate shelf expansion. The pitch is to be considered as a K-beauty partner. Medicube appears in your Korean Beauty category, and APR has public traction signals from Amazon, including high visible ratings/reviews, and category visibility signals from Ulta, including Featured Brand placement.",
+        "We are focused on our beauty transition right now": "APR is not asking for immediate shelf expansion. The pitch is to be considered as a K-beauty partner. Medicube appears in your Korean Beauty category, and Public traction signals are available from Amazon, including high visible ratings/reviews, and category visibility signals from Ulta, including Featured Brand placement.",
         "Medicube price is too high for Target shoppers": "Aprilskin at $8-$16 fits Target's core K-beauty price range. Medicube at $15-$25 serves as the premium tier. A two-brand approach covers multiple price points.",
         "K-beauty is a small category for us": "Target Korean Beauty already has 558 products from approximately 47 brands. The post-Ulta transition is an opportunity to strengthen this category independently."
       },
@@ -81,12 +81,12 @@
       "evidence_status": "Public metrics observed",
       "buyer_ask": "Scale Aprilskin TikTok Shop presence and establish cross-channel pricing governance to protect Ulta/Target sell-through.",
       "go_nogo": "Go: Aprilskin TikTok Shop sales velocity increases measurably and cross-channel price complaints from Ulta/Target remain within acceptable threshold. No-Go: aggressive TikTok discounting triggers channel conflict or Aprilskin content engagement remains flat.",
-      "market_context_override": "TikTok Shop shows the strongest public unit-sales signal among reviewed U.S. channels. Medicube US Store showed 5.7M+ sold with 479.8K followers and 962 videos at the time of observation (source: public TikTok Shop page, May 2026). Discovery is content-driven, not category-driven. Korean Beauty does not exist as a separate browsing category on TikTok Shop. Several observed listings used aggressive discounting, often materially below traditional retail price points.",
+      "market_context_override": "TikTok Shop shows the strongest public unit-sales signal among reviewed U.S. channels. Medicube US Store showed 5.7M+ shop-level public sold count shop-level public sold count shop-level public sold count shop-level public sold count shop-level public sold count shop-level public sold count sold with 479.8K followers and 962 videos at the time of observation (source: public TikTok Shop page, May 2026). Discovery is content-driven, not category-driven. Korean Beauty does not exist as a separate browsing category on TikTok Shop. Several observed listings used aggressive discounting, often materially below traditional retail price points.",
       "kbeauty_presence": ["Systematic K-beauty brand survey not feasible. TikTok Shop has no dedicated Korean Beauty category. COSRX and Dr.Melacran observed in Skincare section alongside Medicube. Listed brands may include K-beauty-adjacent skincare brands."],
-      "why_now": "Medicube US Store shows strong public traction on TikTok Shop (5.7M+ sold, 479.8K followers). However, Aprilskin shows a large public traction gap (53.5K sold, 37.6K followers). This gap suggests room to test whether Medicube's observed content strategy (bundle format, high video count) can be adapted to Aprilskin. Additionally, TikTok Shop's aggressive discount pricing creates channel conflict risk with Ulta and Target that requires proactive management.",
+      "why_now": "Medicube US Store shows strong public traction on TikTok Shop (5.7M+ shop-level public sold count shop-level public sold count shop-level public sold count shop-level public sold count shop-level public sold count shop-level public sold count sold, 479.8K followers). However, Aprilskin shows a large public traction gap (53.5K sold, 37.6K followers). This gap suggests room to test whether Medicube's observed content strategy (bundle format, high video count) can be adapted to Aprilskin. Additionally, TikTok Shop's aggressive discount pricing creates channel conflict risk with Ulta and Target that requires proactive management.",
       "apr_entry_angle": "Medicube TikTok Shop appears mature based on public metrics. The two strategic priorities are: (1) Test Aprilskin scaling using Medicube's observed content approach (bundle strategy, video content velocity). (2) Establish pricing governance between TikTok Shop and traditional retail channels to prevent cross-channel erosion.",
       "first_pitch_products": ["Aprilskin TXA Serum (TikTok-native content push)", "Aprilskin Calendula Peeling Pad (bundle with TXA)", "Aprilskin Carrot Blemish Serum (viral potential)"],
-      "test_structure": "Phase 1: Increase Aprilskin video content count, test bundle-format listings at $15-$30 range. Phase 2: Develop cross-channel pricing framework that defines TikTok-exclusive bundles vs retail-available individual SKUs. 8-12 week pilot.",
+      "test_structure": "Phase 1: Increase Aprilskin video content count, test bundle-format listings at $15-$30 range. Phase 2: Develop cross-channel price-gap monitoring between TikTok-exclusive bundles and retail-available individual SKUs that defines TikTok-exclusive bundles vs retail-available individual SKUs. 8-12 week pilot.",
       "success_kpi": ["Aprilskin TikTok Shop sales velocity growth", "Aprilskin follower growth rate", "cross-channel price-gap monitoring between TikTok-exclusive bundles and retail-available individual SKUs"],
       "risk": "TikTok Shop's frequent aggressive discounting creates persistent channel conflict risk with Ulta and Target. TikTok regulatory uncertainty in the U.S. remains a background risk (as of May 2026). The mitigation is channel diversification across Amazon, Ulta, Target, and DTC, not TikTok dependency. Content production requires investment in video capability.",
       "objection_response": {
@@ -94,8 +94,8 @@
         "Aprilskin is too small to invest in on TikTok": "Medicube's public TikTok metrics suggest the model works for APR brands. Aprilskin's gap represents room to test whether the same content approach can be adapted. The playbook observation already exists.",
         "TikTok regulatory risk is too high": "TikTok Shop remains operational, but regulatory uncertainty should be treated as a background risk. Channel diversification across Amazon, Ulta, Target, and DTC provides resilience."
       },
-      "commercial_hypothesis": "Medicube shows strong public TikTok Shop traction (5.7M+ sold). Aprilskin shows a large public traction gap, suggesting room to test whether Medicube's observed content strategy can be adapted. Simultaneously, TikTok Shop's aggressive discount pricing requires a cross-channel governance framework to protect sell-through at Ulta and Target, because retail buyers may react negatively if identical SKUs are consistently cheaper on TikTok.",
-      "apr_current_status": "Active. Medicube US Store: 5.7M+ sold, 479.8K followers, 962 videos. APRILSKIN: 53.5K sold, 37.6K followers, 121 videos. Both were observed as branded TikTok Shop accounts at the time of observation. Source: public TikTok Shop page, observed May 2026."
+      "commercial_hypothesis": "Medicube shows strong public TikTok Shop traction (5.7M+ shop-level public sold count shop-level public sold count shop-level public sold count shop-level public sold count shop-level public sold count shop-level public sold count sold). Aprilskin shows a large public traction gap, suggesting room to test whether Medicube's observed content strategy can be adapted. Simultaneously, TikTok Shop's aggressive discount pricing requires a cross-channel governance framework to protect sell-through at Ulta and Target, because retail buyers may react negatively if identical SKUs are consistently cheaper on TikTok.",
+      "apr_current_status": "Active. Medicube US Store: 5.7M+ shop-level public sold count shop-level public sold count shop-level public sold count shop-level public sold count shop-level public sold count shop-level public sold count sold, 479.8K followers, 962 videos. APRILSKIN: 53.5K sold, 37.6K followers, 121 videos. Both were observed as branded TikTok Shop accounts at the time of observation. Source: public TikTok Shop page, observed May 2026. Official brand-store status was not independently validated."
     },
     {
       "id": "boots_uk",
@@ -155,7 +155,7 @@
       "online_offline": "both",
       "scale": "large",
       "evidence_status": "Public-source validated",
-      "buyer_ask": "Move top 2 Medicube online-only SKUs into a limited in-store pilot and compare sell-through against online-only baseline.",
+      "buyer_ask": "Discuss selected-store expansion for top-performing online-only Medicube SKUs and compare sell-through against online-only baseline.",
       "go_nogo": "Go: in-store sell-through rate exceeds online-only baseline and store-level reorder frequency is positive within 8-12 weeks. No-Go: weak in-store turnover or price resistance relative to existing drugstore skincare.",
       "kbeauty_presence": ["Beauty of Joseon", "Anua", "MISSHA", "mixsoon", "Abib", "Dr. Althea", "COSRX", "SOME BY MI", "Medicube", "Purito SEOUL", "Round Lab", "Torriden", "Biodance", "SKIN1004", "VT Cosmetics", "BANILA CO", "EQUALBERRY", "TIRTIR", "haruharu wonder"],
       "why_now": "Medicube already has 4 SKUs on dm.de, but online-only (NUR ONLINE). DM operates a 'Koreanische Skincare' category with 82 products from ~20 brands and sub-categories. Opportunity is pushing existing online SKUs into physical store placement and adding Aprilskin for entry-tier drugstore pricing.",
@@ -257,7 +257,7 @@
       "online_offline": "both",
       "scale": "large",
       "evidence_status": "Public-source validated",
-      "buyer_ask": "Reactivate 3 Medicube hero SKUs with stable availability and test Aprilskin as accessible price-tier extension.",
+      "buyer_ask": "Test a focused Medicube hero-SKU reactivation plan with stable supply and test Aprilskin as accessible price-tier extension.",
       "go_nogo": "Go: hero SKU sell-through meets pilot benchmark and reorder frequency is stable within 8 weeks. No-Go: high return rate, weak conversion, or supply instability recurs.",
       "kbeauty_presence": ["Beauty of Joseon", "COSRX", "Some By Mi", "Holika Holika", "Frudia", "It's Skin", "The Saem", "Skin1004", "Dr.Jart+", "Biodance", "Medicube", "Purito", "iUNIK", "D'Alba", "Torriden", "Round Lab", "90+ brands total"],
       "why_now": "Primor is Spain's largest K-beauty channel with 1,031 products from 90+ brands. K-beauty is operated as a routine-based category. Medicube has 13 SKU listings but all are currently 'Not Available'. This is a reactivation opportunity, not a new entry.",

@@ -193,6 +193,8 @@ def render():
         "Blue zone: Ulta/Amazon specialty sweet spot ($15-$35). "
         "AGE-R device ($93-$250) excluded from zone overlay for readability. "
         "Prices are approximate and based on public storefront observations."
+        "Prices shown are observed or reference values from public storefronts. "
+        "Exact pricing may vary. Device and bundle pricing should be validated separately."
     )
 
     st.markdown("---")

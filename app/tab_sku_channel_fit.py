@@ -91,6 +91,10 @@ def render():
     st.caption(
         "Green = Active or strong fit | Yellow = Expansion opportunity | Red = Price/format risk"
     )
+    st.caption(
+        "Fit labels combine public retailer evidence and strategic "
+        "channel-fit judgment; they are not internal APR sales data."
+    )
 
     st.markdown("---")
 

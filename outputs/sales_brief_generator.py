@@ -135,7 +135,11 @@ def load_apr():
 
 
 def get_brand(product_name):
-    return BRAND_MAP.get(product_name, 'Medicube')
+    if product_name in BRAND_MAP:
+        return BRAND_MAP[product_name]
+    if product_name.lower().startswith('aprilskin'):
+        return 'Aprilskin'
+    return 'Medicube'
 
 
 def get_currency(iso2):
@@ -188,7 +192,7 @@ def generate_brief(buyer_id, market_score=None, output_path=None):
         pdf.field('K-beauty presence', ', '.join(display_brands) + suffix)
     pdf.field('APR status', buyer.get('apr_current_status', 'Not entered'))
     if market_score:
-        pdf.field('Market score', f'{market_score} / 100')
+        pdf.field('Country opportunity score', f'{market_score} / 100')
     pdf.divider()
 
     # Primary Buyer Ask
@@ -297,11 +301,12 @@ def generate_brief(buyer_id, market_score=None, output_path=None):
             pdf.ln(2)
 
     # Sign-off
-    pdf.ln(3)
-    pdf.set_font('Helvetica', '', 7)
-    pdf.set_text_color(160, 160, 160)
-    pdf.cell(0, 4, s(f'Prepared by Aiden Oh  |  {datetime.now().strftime("%B %Y")}'),
-             align='R', new_x='LMARGIN', new_y='NEXT')
+    if pdf.page_no() == pdf.pages_count:
+        pdf.ln(3)
+        pdf.set_font('Helvetica', '', 7)
+        pdf.set_text_color(160, 160, 160)
+        pdf.cell(0, 4, s(f'Prepared by Changyeol Aiden Oh  |  {datetime.now().strftime("%B %Y")}'),
+                 align='R', new_x='LMARGIN', new_y='NEXT')
 
     if output_path is None:
         out_dir = os.path.dirname(__file__)

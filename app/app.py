@@ -10,7 +10,7 @@ import sys
 sys.path.insert(0, os.path.dirname(__file__))
 
 st.set_page_config(
-    ppage_title="B2B Market & Channel Scanner",
+    page_title="B2B Market & Channel Scanner",
     page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"

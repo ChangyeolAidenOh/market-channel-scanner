@@ -1,5 +1,5 @@
 """
-APR U.S. Sell-through & Channel Expansion Playbook
+APR U.S. Sell-through & Channel Expansion Scanner
 Global scan to U.S. account-level growth strategy
 4 tabs: Global Scan | U.S. Channel Map | SKU x Channel Fit | Sales Brief
 """
@@ -10,17 +10,17 @@ import sys
 sys.path.insert(0, os.path.dirname(__file__))
 
 st.set_page_config(
-    page_title="APR U.S. Channel Expansion Playbook",
+    ppage_title="B2B Market & Channel Scanner",
     page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
 # Sidebar
-st.sidebar.title("APR U.S. Playbook")
+st.sidebar.title("B2B Market & Channel Scanner")
 st.sidebar.markdown(
     "Global market scan narrowed to U.S. account-level "
-    "sell-through and channel expansion strategy."
+    "sell-through and channel expansion analysis."
 )
 st.sidebar.markdown("---")
 st.sidebar.markdown("**U.S. Channels**")

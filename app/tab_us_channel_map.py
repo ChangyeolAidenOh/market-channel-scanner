@@ -27,7 +27,7 @@ def render():
         "This project began with a 9-market global scan and narrowed to the U.S. "
         "as APR's core commercial market. The U.S. is not a new-entry market; "
         "APR already has visible Medicube/APRILSKIN presence across Amazon, Ulta, "
-        "and TikTok Shop. Therefore, the playbook focuses on sell-through growth, "
+        "and TikTok Shop. Therefore, the project focuses on sell-through growth, "
         "SKU productivity, channel expansion, and cross-channel pricing governance."
     )
 

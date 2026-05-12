@@ -113,5 +113,3 @@ Streamlit 대시보드 4탭(글로벌 스캔, 미국 채널 맵, SKU x 채널 �
 
 ---
 
-*작성자: 오창열 (Changyeol Aiden Oh) — 2026년 5월*
-*GitHub: [market-channel-scanner](https://github.com/ChangyeolAidenOh/market-channel-scanner)*

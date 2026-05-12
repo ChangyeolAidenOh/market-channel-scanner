@@ -1,287 +1,224 @@
-# PINN Lookback Options Pricing
+# B2B Market & Channel Scanner
 
-Physics-Informed Neural Networks (PINNs) for pricing European and American lookback options with free boundary conditions. This project implements PDE-constrained deep learning to solve Black-Scholes equations for path-dependent derivatives, replacing traditional numerical methods (finite difference, Monte Carlo) with neural network approximations that encode financial PDE structure directly into the loss function.
+**Global market scan narrowed to U.S. account-level sell-through and channel expansion analysis.**
 
-**Author**: Changyeol Oh  
-**Independent Project**
-
----
-
-## Table of Contents
-
-- [Project Overview](#project-overview)
-- [Background](#background)
-- [Notebook Progression](#notebook-progression)
-- [Project Structure](#project-structure)
-- [Pipeline](#pipeline)
-- [Methodology](#methodology)
-- [Results](#results)
-- [Colab Compatibility](#colab-compatibility)
-- [How to Run](#how-to-run)
-- [Future Work](#future-work)
-- [References](#references)
+> This is a candidate portfolio simulation using public retailer pages, public market data, and manually collected screenshots. It does not use internal APR sales, margin, inventory, or buyer data.
 
 ---
 
 ## Project Overview
 
-Lookback options are path-dependent financial derivatives whose payoff depends on the minimum or maximum price of the underlying asset over the option's life. Pricing these options requires solving PDEs with path-dependent boundary conditions — a computationally expensive task for traditional methods.
+This project simulates the analytical workflow of a B2B global sales team evaluating market entry and channel expansion opportunities for a Korean beauty (K-beauty) company's portfolio.
 
-This project applies PINNs to solve the Black-Scholes PDE for four lookback option types (Fixed Call, Fixed Put, Floating Call, Floating Put) under both European and American exercise styles. For American options, a Free Boundary PINN architecture jointly learns the option price surface and the early exercise boundary.
+The analysis began with a 9-country global scan across the U.S., Europe, and CIS, then narrowed to the U.S. as the core commercial priority based on import volume, purchasing power, regulatory readiness, and existing public channel presence. European and CIS retailer research is retained as cross-market reference intelligence.
 
----
+**Individual project** — all research, analysis, and code by Changyeol (Aiden) Oh.
 
-## Background
-
-### Lookback Option Types
-
-| Type | Payoff |
+| Attribute | Detail |
 |---|---|
-| Fixed Call | max(max(S_T) - K, 0) |
-| Fixed Put | max(K - min(S_T), 0) |
-| Floating Call | max(S_T - min(S_t), 0) |
-| Floating Put | max(max(S_t) - S_T, 0) |
-
-### Black-Scholes PDE
-
-The PINN enforces the Black-Scholes PDE as an unsupervised loss:
-
-```
-∂u/∂t + (σ²/2)·S²·(∂²u/∂S²) + r·S·(∂u/∂S) - r·u = 0
-```
-
-For American options, the free boundary condition adds a complementarity constraint that determines the optimal early exercise boundary.
+| Scope | 9 countries, 18 retailers, 11 account briefs |
+| U.S. Channels | Amazon, TikTok Shop, Ulta, Target |
+| European Benchmark | Douglas, Boots, DM, Rossmann, Notino, Sephora France, Primor |
+| CIS Reference | Kaspi.kz, Gold Apple (qualitative appendix) |
+| Data Sources | UN Comtrade (HS 3304), World Bank, Google Trends, 18 public retailer websites, TikTok Shop public store data |
+| Output | Streamlit dashboard (4 tabs) + PDF account brief generator |
+| Deployment | [Streamlit Cloud](https://market-channel-scanner-account-breif.streamlit.app/) |
 
 ---
 
-## Notebook Progression
+## Why the U.S.?
 
-Development followed an iterative process across three notebooks:
+The scoring model evaluated 9 countries across 4 scenarios (base, growth-focused, risk-controlled, channel-expansion). The U.S. did not rank first in entry-opportunity score because competition is already intense. However, it emerged as the core commercial priority in this portfolio for three reasons:
 
-| Order | Notebook | Role | Status |
-|---|---|---|---|
-| 1 | `free_boundary_pinn.ipynb` | Prototype — FreeBoundary_PINN class development, first Lookback 4-type PINN | Completed |
-| 2 | `american_lb_lookback.ipynb` | Experimental — eta=M/S coordinate transform to extend Free Boundary to Lookback options | Convergence failed (nan); Lookback 4-type completed separately |
-| 3 | `american_lookback_final.ipynb` | Final — Optimized hyperparameters, stable Free Boundary convergence (Best step 782), Lookback 4-type at 10⁻⁸ | **Final results** |
+1. **Largest import volume** — $1.02B in HS 3304 cosmetics imports (2023), 10x larger than the next market.
+2. **Existing public channel presence** — Medicube and Aprilskin listings observed across Amazon, Ulta, Target, and TikTok Shop.
+3. **Clear account-growth tasks** — The U.S. is not a new-entry market. The task is sell-through growth, SKU productivity, and cross-channel pricing governance.
 
-Discarded files: `Americal_LB_final.ipynb` (identical copy of `american_lookback_final.ipynb`, filename typo).
-
----
-
-## Project Structure
-
-```
-pinn-lookback-options/
-│
-├── notebooks/
-│   ├── European_LB_final.ipynb            # European lookback: MC simulation + PINN 4 types
-│   ├── american_lookback_final.ipynb       # American lookback: Free Boundary PINN + 4 types (FINAL)
-│   ├── free_boundary_pinn.ipynb            # Prototype: Free Boundary PINN development
-│   ├── american_lb_lookback.ipynb          # Experimental: eta=M/S coordinate transform attempt
-│   ├── Exotic_European_examples.ipynb      # Additional European exotic option examples
-│   └── Stefan_1D_Freeboundary_Tensorflow2.ipynb  # Stefan problem reference
-│
-├── scripts/
-│   ├── European_lb.py                      # European lookback modularized script
-│   ├── American_lb.py                      # American lookback modularized script
-│   └── LB_integrate_2.py                   # Integral pricing formula implementation
-│
-├── figures/                                # Generated plots and visualizations
-│
-├── data/
-│   └── lookback_options_analysis.csv       # Greeks analysis (100 rows, Delta/Gamma/Theta)
-│
-├── docs/
-│   └── Lookback_Options_Changyeol_Oh.pdf   # Project report
-│
-└── README.md
-```
+UAE ranked highest in entry-opportunity signals but is treated as an expansion watchlist rather than the focus market, because this project targets the U.S. applicant region and prioritizes existing account-growth tasks.
 
 ---
 
 ## Pipeline
 
 ```
-                    Lookback Options with PINNs
-                              │
-              ┌───────────────┴───────────────┐
-              ▼                               ▼
-      European Options                American Options
-              │                               │
-              ▼                               ▼
-   Black-Scholes PDE              Black-Scholes PDE
-   (analytical solution           + Free Boundary Condition
-    available for validation)     (early exercise boundary)
-              │                               │
-              ▼                               ▼
-   Monte Carlo Simulation         FreeBoundary_PINN Class
-   (baseline comparison)          (dual-network architecture)
-              │                        │            │
-              ▼                        ▼            ▼
-   PINN Training                  mdl network   fb network
-   (4 option types)               (option price) (exercise boundary)
-              │                        │            │
-              ▼                        └─────┬──────┘
-   MC vs PINN Comparison                    ▼
-                                  Alternating Training
-                                  (steps_fb_per_pde = 20)
-                                         │
-                              ┌──────────┴──────────┐
-                              ▼                     ▼
-                     Free Boundary Plot    Lookback 4-Type PINN
-                     (Early Exercise       (Fixed/Floating ×
-                      Boundary Curve)       Call/Put)
+Stage 1: Global Market Scan
+  Comtrade HS 3304 (1,721 rows)
+  World Bank (77 rows)                    ──→  9-country scoring
+  Google Trends (K-beauty + Medicube)          4-scenario sensitivity
+  Expert assessment (regulation, competition)
+
+Stage 2: Retailer Validation (18 channels)
+  U.S.: Amazon, Ulta, Target, TikTok Shop, Soko Glam
+  Europe: Douglas, Boots, DM, Rossmann,       ──→  competition_inv
+          Notino, Sephora FR, Primor, Druni        calibration
+  CIS: Kaspi.kz, Gold Apple, Allegro              market_role update
+  Ukraine: EVA.UA (qualitative appendix)
+
+Stage 3: U.S. Channel Strategy
+  SKU × Channel Fit matrix                ──→  Account briefs
+  Cross-channel pricing analysis               Priority ladder
+  Aprilskin TikTok growth gap analysis         PDF generator
+
+Stage 4: Dashboard & Deployment
+  Streamlit 4-tab dashboard              ──→  Streamlit Cloud
+  PDF account brief generator
 ```
 
 ---
 
-## Methodology
+## Key Findings
 
-### Loss Function Components
+### Stage 1 → Stage 2: Manual research changed the model
 
-The PINN total loss consists of multiple components that enforce PDE physics and boundary conditions:
+The most significant outcome of this project is that retailer-level manual research revised initial scoring assumptions. Five of 9 countries had their competition scores adjusted after direct channel validation:
 
-**Unsupervised Loss (PDE Residual)**: Enforces the Black-Scholes equation at collocation points sampled via Sobol quasi-random sequences across the (S, t) domain.
+| Country | Stage 1 comp_inv | Stage 2 comp_inv | What changed |
+|---|---|---|---|
+| UK | 60 | 30 | Boots: 486 products, 35+ brands, Medicube 13 SKUs already listed |
+| Germany | 65 | 40 | Douglas 715 + DM 82 + Rossmann 93, ISANA PB Korean Skincare discovered |
+| France | 65 | 55 | Sephora FR: 264 products, Medicube 19 SKUs, editorial gap identified |
+| Spain | 75 | 50 | Primor: 1,031 products, Medicube 13 SKUs all "Not Available" |
+| Kazakhstan | 85 | 55 | Kaspi.kz: 28,213 listings, Medicube 407 listings with reviews |
 
-**Initial Condition Loss**: Matches the known option payoff at maturity t = T.
+### U.S. Channel Priority Ladder
 
-**Dirichlet Boundary Loss**: Enforces option price values at domain boundaries (e.g., deep in-the-money or out-of-the-money).
+Priority is based on near-term U.S. growth leverage, not channel prestige.
 
-**Neumann Boundary Loss**: Enforces gradient conditions (smooth pasting) at the free boundary.
+| Priority | Channel | Role | Key Signal |
+|---|---|---|---|
+| 1 | Amazon | Proof channel | 487 results, 121K+ public ratings on Zero Pore Pad |
+| 2 | TikTok Shop | Growth acceleration | 5.7M+ shop-level public sold count, Aprilskin gap |
+| 3 | Ulta | Brand elevation | 1,338 K-beauty products, Featured Brand placement |
+| 4 | Target | Mass accessibility | 558 K-beauty products, post-Ulta Beauty Studio transition |
+| 5 | Costco | Exploratory | 86 Korean skincare results, no Medicube observed |
 
-**Free Boundary Losses** (American only): Three additional loss terms (initial, Dirichlet, Neumann) enforce that the free boundary network learns the correct early exercise boundary.
+### Cross-Channel Pricing Risk
 
-### FreeBoundary_PINN Architecture
+TikTok Shop's frequent aggressive discounting creates channel conflict risk. Zero Pore Pad was observed at approximately $15 on Amazon, $21 at Ulta, and $20.90 on TikTok Shop (with deeper discounts in bundles). The recommended mitigation is format-based differentiation: TikTok-exclusive bundles not available at retail.
 
-The American option solver uses a dual-network architecture:
+### Aprilskin TikTok Growth Gap
 
-| Network | Input | Hidden Layers | Output | Role |
-|---|---|---|---|---|
-| mdl (main) | (S, t) | 8 × 15 neurons, tanh | 1 (option price) | Solves the PDE |
-| fb (free boundary) | t | 3 × 150 neurons, tanh | 1 (boundary S*) | Learns exercise boundary |
-
-Training alternates between the two networks, with 20 free boundary steps per PDE step, using RMSprop optimizer with exponential learning rate decay (initial lr=1e-3, decay every 300 steps, rate=0.9).
-
-### Lookback 4-Type PINN
-
-For each of the four lookback option types, an independent 3-layer network (50 neurons each, tanh activation) is trained with input (S, M, t) where M tracks the path-dependent min/max of S via GBM path simulation. Training cells are split per option type with explicit memory cleanup (`gc.collect()`) between runs to prevent OOM on A100 (83.5 GB System RAM).
-
-### Parameters
-
-| Parameter | Value |
-|---|---|
-| Risk-free rate (r) | 0.01 |
-| Volatility (σ) | 0.05 |
-| Strike price (K) | 10.0 |
-| Maturity (T) | 3.0 years |
-| Collocation points (N_f) | 9,000 |
-| Sampling method | Sobol sequence |
+Medicube showed 5.7M+ shop-level public sold count vs Aprilskin's 53.5K on TikTok Shop — a large public traction gap suggesting room to test whether Medicube's observed content strategy can be adapted to Aprilskin.
 
 ---
 
-## Results
+## Dashboard Structure
 
-### American Put — Free Boundary PINN
-
-Training converged at Best step 782 (1,000 epochs) with the following loss components:
-
-| Component | Final Loss |
+| Tab | Purpose |
 |---|---|
-| Unsupervised (PDE) | 4.40 × 10⁻⁶ |
-| Initial | 2.35 × 10⁻⁴ |
-| Dirichlet | 1.06 × 10⁻⁵ |
-| Free Boundary | 9.60 × 10⁻⁴ |
-| **Total** | **3.22 × 10⁻⁴** |
+| Stage 1: Global Scan | 9-country scoring with 4-scenario sensitivity analysis. Explains why U.S. was selected. |
+| Stage 2: U.S. Channel Map | U.S. channel overview, priority ladder, cross-channel pricing risk, account briefs |
+| Stage 2: SKU x Channel Fit | Product-channel matrix showing which products fit which channels by price and format |
+| Stage 2: Account Brief | PDF brief generator for buyer meeting preparation |
 
-The early exercise boundary shows the expected behavior for an American put: starting near S* ≈ 0.57 at t = 0, increasing to S* ≈ 1.13 around t = 2, then gradually decreasing toward maturity.
+---
 
-<p align="center">
-  <img src="figures/free_boundary_american_put.png" width="700">
-</p>
+## Evidence Levels
 
-### Lookback 4-Type PINN — Final Loss (10,000 epochs)
+This project distinguishes three evidence levels:
 
-| Option Type | Final Loss |
-|---|---|
-| Fixed Call | 4.26 × 10⁻⁸ |
-| Fixed Put | 1.65 × 10⁻⁸ |
-| Floating Call | 3.07 × 10⁻⁸ |
-| Floating Put | 2.16 × 10⁻⁸ |
-
-All four cases converged to 10⁻⁸ order, demonstrating that the PINN framework successfully learns lookback option prices across all payoff structures.
-
-### Training Environment Comparison
-
-| Environment | FreeBoundary_PINN (1,000 epochs) | Lookback 4-Type (10,000 epochs each) |
+| Level | Meaning | Example |
 |---|---|---|
-| A100 GPU (Google Colab) | ~2.5 min | ~15 min per case |
-| Apple M2 CPU (local) | ~8–9 hours | Not feasible |
+| Observed | Directly seen from public retailer pages | Medicube 13 SKUs on Boots.com |
+| Inferred | Interpretation based on observed signals | "Editorial gap" at Sephora France |
+| Proposed | Sales hypothesis for buyer conversation | "AGE-R device in-store demo pilot" |
 
----
+Account-level evidence status:
 
-## Colab Compatibility
-
-The original notebooks were developed on Python 3.8 + TensorFlow 2.x (Keras 2). Running on Google Colab (Python 3.12 + TensorFlow 2.16+ / Keras 3) requires the following modifications:
-
-| Issue | Symptom | Fix |
+| Status | Meaning | Accounts |
 |---|---|---|
-| Keras 3 default | `ValueError: Cannot convert '2' to a shape` | Install `tf_keras`, set `TF_USE_LEGACY_KERAS=1` before importing TF |
-| Sobol package | `ModuleNotFoundError: No module named 'sobol'` | `pip install SobolSequence` (provides `import sobol`) |
-| pyDOE numpy conflict | numpy version incompatibility | `pip install pyDOE2 "numpy<2.2"` |
-| Optimizer mismatch | `KeyError: optimizer cannot recognize variable` | Use `tf.keras.optimizers.legacy.Adam/RMSprop` |
-| GradientTape alias | `NameError: name 'G_Tape' is not defined` | Replace `G_Tape` with `tf.GradientTape` or keep import line |
-| OOM on long training | System RAM exceeded (83.5 GB) | Split training into separate cells per option type with `gc.collect()` |
-
-### Colab Setup
-
-> **⚠️ IMPORTANT**: pip install and environment variable setup must be done in **separate steps** with a **runtime restart** between them.
-
-**Step 1** — Run this cell, then **Restart runtime** (Runtime > Restart session):
-```python
-!pip install tf_keras "numpy<2.2" pyDOE2 SobolSequence
-```
-
-**Step 2** — After restart, run this cell **FIRST** before any other imports:
-```python
-import os
-os.environ["TF_USE_LEGACY_KERAS"] = "1"
-```
+| Public-source validated | Product listings directly confirmed | Amazon, Ulta, Boots, Douglas, DM, Rossmann, Primor |
+| Public metrics observed | Public traction data (sold count, followers) confirmed | TikTok Shop |
+| Representative storefront validation | Validated through one country storefront | Notino (via Notino.de) |
+| France storefront validation | Validated through France storefront | Sephora France |
+| Category presence observed | Category/filter presence confirmed, SKU detail pending | Target |
+| Exploratory hypothesis | Limited direct evidence | Costco |
 
 ---
 
-## How to Run
+## Data Sources and Limitations
 
-### Google Colab (Recommended)
+| Source | Usage | Limitation |
+|---|---|---|
+| UN Comtrade | Import volume/growth (HS 3304) | Preview mode (500 records/call). 2023 latest. |
+| World Bank | GDP per capita, internet penetration | PPP-adjusted. 2023 latest. |
+| Google Trends | K-beauty Topic + Medicube Search term | Relative indices only, not absolute volume. Separate normalizations. |
+| Retailer websites | K-beauty category, brand filters, product counts, pricing | Point-in-time snapshots (May 2026). Not sell-through data. |
+| TikTok Shop | Public sold counts, follower counts, video counts | Shop-level aggregates. May include seller duplication on marketplaces. |
 
-1. Upload notebook to Google Colab
-2. Select A100 GPU runtime (Runtime > Change runtime type)
-3. Follow the Colab Setup steps above (install → restart → env variable)
-4. Run cells sequentially
+**Google Trends caveat**: K-beauty Topic and Medicube Search term use separate normalizations. Cross-metric comparison (e.g., "Medicube is more popular than K-beauty in country X") is not valid. Both are used as directional signals only.
 
-### Local Environment
+**Marketplace caveat**: Kaspi.kz (28,213 listings) and Allegro (543 offers) are marketplace platforms where the same product can appear from multiple sellers. Estimated unique product count for Kaspi is approximately 3,500-4,000 after ~7x seller duplication adjustment.
+
+**Competition scores**: The `competition_inv` values are provisional expert assessments calibrated by retailer-level manual research. They are not derived from a statistical model.
+
+---
+
+## Russia / Ukraine: Qualitative Appendix
+
+Russia and Ukraine are excluded from the comparable opportunity score — not because of weak demand, but because entry-feasibility risks are outside the model's current feature structure.
+
+| Country | K-beauty Signal | Exclusion Reason |
+|---|---|---|
+| Russia | Gold Apple: 1,741 products, 200+ brands, Medicube 16 SKUs | Sanctions, payment, logistics, partner due-diligence risks |
+| Ukraine | EVA.UA: 10,009 Korean cosmetics products | War-related infrastructure, logistics, recovery conditions |
+
+---
+
+## Reproducibility
 
 ```bash
-# Requires Python 3.8+, TensorFlow 2.x
-pip install tensorflow numpy scipy matplotlib tqdm pyDOE SobolSequence
+# Clone
+git clone https://github.com/ChangyeolAidenOh/market-channel-scanner.git
+cd market-channel-scanner
 
-# Run notebooks
-jupyter notebook notebooks/american_lookback_final.ipynb
+# Install
+pip install -r requirements.txt
+
+# Run scoring (requires .env with COMTRADE_API_KEY)
+python analysis/market_scoring.py
+
+# Generate PDF briefs
+python outputs/sales_brief_generator.py
+
+# Run dashboard
+streamlit run app/app.py
+```
+
+**Environment**: Python 3.10+, macOS (M2).
+
+**API keys**: Comtrade API key required in `.env` file for data collection. Processed data is included in `data/processed/` for dashboard use without API access.
+
+---
+
+## File Structure
+
+```
+market-channel-scanner/
+  analysis/
+    market_scoring.py          # Stage 1: 9-country scoring + sensitivity
+  app/
+    app.py                     # Streamlit main app (4 tabs)
+    tab_market_scanner.py      # Tab 1: Global Scan
+    tab_us_channel_map.py      # Tab 2: U.S. Channel Map
+    tab_sku_channel_fit.py     # Tab 3: SKU x Channel Fit
+    tab_sales_brief.py         # Tab 4: Account Brief generator
+  data/
+    processed/
+      market_scores.csv        # Scoring output
+      country_features.csv     # Feature matrix
+    reference/
+      buyers.json              # 11 account briefs
+      country_qualitative.json # Country-level context
+      apr_products.json        # Product reference
+  outputs/
+    sales_brief_generator.py   # PDF brief generator
+  .streamlit/
+    config.toml                # Light theme
+  requirements.txt
+  README.md
 ```
 
 ---
 
-## Future Work
-
-**Free Boundary extension to Lookback options**: The current implementation successfully learns the early exercise boundary for standard American puts and separately learns lookback option prices. Combining both — learning the early exercise boundary for American lookback options — was attempted via eta=M/S coordinate transformation (`american_lb_lookback.ipynb`) but failed to converge (Unsupervised loss remained nan). Alternative approaches such as penalty methods or variational inequality formulations may be needed to solve this problem.
-
-**Quanto Lookback Options**: Extending the PINN framework to Quanto lookback options involving coupled stochastic processes (asset price + currency exchange rate dynamics).
-
-**DeepONet integration**: Applying Deep Operator Networks to learn mappings between entire function spaces for more efficient path-dependent option pricing.
-
----
-
-## References
-
-1. Goldman, M. B., Sosin, H. B., & Gatto, M. A. (1979). Path dependent options: "Buy at the low, sell at the high." *Journal of Finance*, 34(5), 1111-1127.
-2. Conze, A., & Viswanathan, R. (1991). Path dependent options: The case of lookback options. *Journal of Finance*, 46(5), 1893-1907.
-3. Raissi, M., Perdikaris, P., & Karniadakis, G. E. (2019). Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations. *Journal of Computational Physics*, 378, 686-707.
+*Built by [Changyeol (Aiden) Oh](https://github.com/ChangyeolAidenOh) — May 2026*

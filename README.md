@@ -220,5 +220,3 @@ market-channel-scanner/
 ```
 
 ---
-
-*Built by [Changyeol (Aiden) Oh](https://github.com/ChangyeolAidenOh) — May 2026*

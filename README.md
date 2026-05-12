@@ -2,7 +2,6 @@
 
 Physics-Informed Neural Networks (PINNs) for pricing European and American lookback options with free boundary conditions. This project implements PDE-constrained deep learning to solve Black-Scholes equations for path-dependent derivatives, replacing traditional numerical methods (finite difference, Monte Carlo) with neural network approximations that encode financial PDE structure directly into the loss function.
 
-**Course**: AMS 516 — Stony Brook University, M.S. Applied Mathematics & Statistics  
 **Author**: Changyeol Oh  
 **Independent Project**
 
@@ -286,4 +285,3 @@ jupyter notebook notebooks/american_lookback_final.ipynb
 1. Goldman, M. B., Sosin, H. B., & Gatto, M. A. (1979). Path dependent options: "Buy at the low, sell at the high." *Journal of Finance*, 34(5), 1111-1127.
 2. Conze, A., & Viswanathan, R. (1991). Path dependent options: The case of lookback options. *Journal of Finance*, 46(5), 1893-1907.
 3. Raissi, M., Perdikaris, P., & Karniadakis, G. E. (2019). Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations. *Journal of Computational Physics*, 378, 686-707.
-4. Oh, C. (2024). Lookback Options, examination with PINNs in Deep-Learning. AMS 516, Stony Brook University.
